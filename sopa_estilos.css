@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#inicio, #juego {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#instrucciones {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+#sopaDeLetras {
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.celda {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    font-weight: bold;
+    background-color: white;
+    user-select: none;
+}
+
+.celdaSeleccionada {
+    background-color: #d0e8ff;
+}
+
+.celdaEncontrada {
+    background-color: #a8e6a1;
+}
+
+#listaPalabras, #pistas {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.pista, .palabra {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.pistaEncontrada {
+    color: green;
+    text-decoration: line-through;
+}
+
+.palabraEncontrada {
+    color: green;
+    text-decoration: line-through;
+}
+
+@media print {
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    #inicio, #juego button, #recursosVisuales, #mensajeError, #mensajeExito, #areaContraseña, #temporizador, #listaPalabras, #pistas, #instrucciones {
+        display: none;
+    }
+
+    #sopaDeLetras {
+        margin: 0 auto;
+        transform: none;
+        width: auto;
+    }
+
+    .celda {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+        background-color: white !important;
+    }
+
+    #pistas {
+        max-width: 100%;
+        margin: 20px auto;
+        text-align: left;
+        line-height: 1.5;
+        font-size: 14px;
+        page-break-before: always;
+    }
+
+    .pista, .palabra {
+        margin: 8px 0;
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    #pistas h2, #listaPalabras h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
