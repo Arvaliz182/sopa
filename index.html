@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Sopa de Letras</title>
+    <link rel="stylesheet" href="sopa_estilos.css">
+    <!-- Librerías necesarias para la descarga en PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div id="inicio">
+        <h1>Juego de Sopa de Letras</h1>
+        <label for="nivel">Selecciona un nivel:</label>
+        <select id="nivel">
+            <option value="1">Nivel 1 (18 palabras, sin temporizador)</option>
+            <option value="2">Nivel 2 (18 palabras, 15 minutos)</option>
+            <option value="3">Nivel 3 (27 palabras con pistas, sin temporizador)</option>
+            <option value="4">Nivel 4 (27 palabras con pistas, 20 minutos)</option>
+        </select>
+        <button onclick="iniciarJuego()">Comenzar Juego</button>
+    </div>
+
+    <div id="juego" style="display: none;">
+        <div id="instrucciones">
+            <p>
+                Selecciona las palabras arrastrando el ratón sobre las letras o haciendo clic en cada letra individualmente.
+                Puedes deshacer tu última selección con el botón "Deshacer Selección".
+                Una vez que hayas seleccionado una palabra, presiona "Verificar Selección" para comprobar si es correcta.
+            </p>
+        </div>
+        <div id="temporizador" style="font-size: 24px; margin: 10px;"></div>
+        <div id="mensajeError" style="color: red;"></div>
+        <div id="mensajeExito" style="color: green;"></div>
+        <div id="sopaDeLetras"></div>
+        <div id="listaPalabras"></div>
+        <div id="pistas" style="display: none;"></div>
+        <div id="areaContraseña" style="display: none;">
+            <label for="inputContraseña">Introduce la contraseña:</label>
+            <input type="password" id="inputContraseña">
+            <button onclick="verificarContraseña()">Aceptar</button>
+            <div id="errorContraseña" style="color: red;"></div>
+        </div>
+        <button onclick="verificarSeleccion()">Verificar Selección</button>
+        <button onclick="deshacerSeleccion()">Deshacer Selección</button>
+        <button onclick="verificarRespuestas()">Verificar Respuestas</button>
+        <button onclick="mostrarAreaContraseña()">Mostrar Respuestas</button>
+        <button onclick="descargarComoPDF()">Descargar como PDF</button>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+        <div id="recursosVisuales">
+            <p>Recursos Visuales: <a href="https://sites.google.com/pcpuma.acatlan.unam.mx/proyecto-final/recursos-visuales?authuser=0" target="_blank">https://sites.google.com/pcpuma.acatlan.unam.mx/proyecto-final/recursos-visuales?authuser=0</a></p>
+        </div>
+    </div>
+
+    <script src="sopa_palabras.js"></script>
+    <script src="sopa_juego.js"></script>
+</body>
+</html>
+
